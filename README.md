@@ -193,16 +193,19 @@ doReturn(List.of(new Employee(...))).when(spyService).getAllEmployees();
 ## 📂 Project Structure
 
 ```
-src/main/java/com/alexanie/jobboard
+src/main/java/com/alexanie/app
  ├── controller/    # REST controllers
  ├── model/         # Entities (Employee, Companies)
  ├── repository/    # Spring Data JPA repositories
  ├── service/       # Service layer (business logic)
- └── JobBoardApplication.java  # Main entry point
+ └── AppApplication.java  # Main entry point
 
-src/test/java/com/alexanie/jobboard
- ├── controller/    # Controller tests
- ├── MockitoSpyTest.java
- ├── EmployeeServiceMockVsSpyTest.java
- └── EmployeeControllerIntegrationSpyTest.jav
+src/test/java/com/alexanie/app
+ ├── company/    # Company Rest API tests
+    ├── *.java 
+ 
+ 
+ ├── employee/    # Employee Rest API tests
+    ├── *.java
+ 
 ```
