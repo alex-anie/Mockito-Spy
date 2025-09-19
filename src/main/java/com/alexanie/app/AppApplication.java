@@ -19,6 +19,7 @@ public class AppApplication {
     }
 
     // Load dummy data into the DB on startup
+    @Bean
     CommandLineRunner runner(EmployeeRepository repository) {
         return args -> {
             repository.saveAll(Arrays.asList(
