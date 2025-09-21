@@ -40,4 +40,11 @@ public class Companies {
 
     public List<String> getIndustries() { return industries; }
     public void setIndustries(List<String> industries) { this.industries = industries; }
+
+    // Business logic method for clearing industries
+    public void clearDepartments() {
+        if (industries != null) {
+            industries.clear();
+        }
+    }
 }
