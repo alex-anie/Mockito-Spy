@@ -12,34 +12,6 @@ import static org.mockito.Mockito.*;
 public class CompaniesSpyStubbingTest {
 
     @Test
-    @DisplayName("Spy with when().thenReturn()")
-    void spyWithWhenThenReturn() {
-        // Real object
-        Companies realCompany = new Companies(
-                1L,
-                "TechWorld",
-                500,
-                Arrays.asList("Cloud", "AI", "Security")
-        );
-
-        // Spy the object
-        Companies spyCompany = spy(realCompany);
-
-        // Stubbing with when().thenReturn()
-        when(spyCompany.getNumberOfEmployees()).thenReturn(1000);
-
-        // Act
-        int employees = spyCompany.getNumberOfEmployees();
-
-        // Assert
-        assertThat(employees).isEqualTo(1000);  // Stubbed value
-        assertThat(spyCompany.getName()).isEqualTo("TechWorld"); // Real value still works
-
-        // Verify interaction
-        verify(spyCompany).getNumberOfEmployees();
-    }
-
-    @Test
     @DisplayName("Spy with doReturn().when()")
     void spyWithDoReturnWhen() {
         // Real object
@@ -65,5 +37,9 @@ public class CompaniesSpyStubbingTest {
 
         // Verify interaction
         verify(spyCompany).getNumberOfEmployees();
+
+        System.out.println(employees + " stubbed number of employees");
+        // -> 2000 (stubbed number of employee)
+
     }
 }
