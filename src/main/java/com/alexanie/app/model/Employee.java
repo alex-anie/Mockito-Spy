@@ -2,6 +2,7 @@ package com.alexanie.app.model;
 
 import jakarta.persistence.*;
 import java.util.List;
+import java.util.function.IntPredicate;
 
 @Entity
 public class Employee {
@@ -64,5 +65,9 @@ public class Employee {
     }
     public void setSkills(List<String> skills) {
         this.skills = skills;
+    }
+
+    public String getProfession() {
+        return this.role;
     }
 }

@@ -25,6 +25,7 @@ public class CompaniesSpyTest {
                 new Companies(2L, "CodeSmiths", 500, Arrays.asList("Software Development", "DevOps")),
                 new Companies(3L, "CyberSecPro", 300, Arrays.asList("Cybersecurity", "Networking"))
         );
+
         Mockito.doReturn(fakeCompanies).when(realService).getAllCompanies();
 
         // Use the spy to interact with realService methods
