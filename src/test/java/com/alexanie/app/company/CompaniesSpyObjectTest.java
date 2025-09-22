@@ -26,7 +26,7 @@ public class CompaniesSpyObjectTest {
         Companies spyCompany = spy(realCompany);
 
         // Stub one method: override getNumberOfEmployees()
-        when(spyCompany.getNumberOfEmployees()).thenReturn(2000);
+        when(spyCompany.getNumberOfEmployees()).thenReturn(3000);
 
         // Use spy normally
         String name = spyCompany.getName();
@@ -34,7 +34,7 @@ public class CompaniesSpyObjectTest {
 
         // Assertions
         assertThat(name).isEqualTo("NextGenAI");   // comes from real object
-        assertThat(employees).isEqualTo(2000);     // comes from stubbed spy
+        assertThat(employees).isEqualTo(3000);     // comes from stubbed spy
 
         // Verify interactions
         verify(spyCompany).getName();
