@@ -48,7 +48,7 @@ public class EmployeeServiceMockVsSpyTest {
 
         // Optionally stub one method (if needed)
         doReturn(List.of(
-                new Employee(99L, "Charlie", "DevOps", 100000.0, List.of("Docker"))
+                new Employee(99L, "James", "DevOps", 100000.0, List.of("Docker"))
         )).when(spyService).getAllEmployees();
 
         // Act
@@ -56,7 +56,7 @@ public class EmployeeServiceMockVsSpyTest {
 
         // Assert
         assertThat(employees).hasSize(1);
-        assertThat(employees.get(0).getName()).isEqualTo("Charlie");
+        assertThat(employees.get(0).getName()).isEqualTo("James");
 
         // Verify interaction
         verify(spyService).getAllEmployees();
